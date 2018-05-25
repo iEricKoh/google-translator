@@ -18,7 +18,7 @@ func Translate(text, sl, tl string) (string, error) {
 		TargetLang: tl,
 	}
 
-	url, err := GenerateURL(option)
+	url, err := generateURL(option)
 
 	if err != nil {
 		return "", err
@@ -60,7 +60,7 @@ func doTranslate(url string) (string, error) {
 	return result, nil
 }
 
-func GenerateURL(opt *Option) (string, error) {
+func generateURL(opt *Option) (string, error) {
 	if err := opt.Validate(); err != nil {
 		return "", err
 	}
